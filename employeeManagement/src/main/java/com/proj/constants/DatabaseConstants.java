@@ -9,8 +9,9 @@ public class DatabaseConstants {
 	public static final String COLUMN_6 = "java(rs.getString(6))";
 	public static final String COLUMN_1_LONG = "java(rs.getLong(1))";
 	
-	public static final String SP_NAME_EMP_LIST_BY_ID = "getEmpListById";
+	public static final String SP_NAME_EMP_LIST_BY_ID = "getEmployeeById";
 	public static final String SP_RESULT_SET = "results";
+	public static final String SCHEMA_NAME = "dev";
 	
-	public static final String IN_PARAMETER_IN_EMP_ID = "In_Emp_Id";
+	public static final String IN_PARAMETER_IN_EMP_ID = "In_EmpId";
 }

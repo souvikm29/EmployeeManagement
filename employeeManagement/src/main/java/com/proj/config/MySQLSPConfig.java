@@ -1,6 +1,7 @@
 package com.proj.config;
 
 import static com.proj.constants.DatabaseConstants.IN_PARAMETER_IN_EMP_ID;
+import static com.proj.constants.DatabaseConstants.SCHEMA_NAME;
 import static com.proj.constants.DatabaseConstants.SP_NAME_EMP_LIST_BY_ID;
 import static com.proj.constants.DatabaseConstants.SP_RESULT_SET;
 
@@ -29,7 +30,7 @@ public class MySQLSPConfig {
 
 	@Bean("CreateSPInstance")
 	public SimpleJdbcCall CreateSPInstance() {
-		SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(dataSource).withSchemaName("dev")
+		SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(dataSource).withSchemaName(SCHEMA_NAME)
 				.withProcedureName(SP_NAME_EMP_LIST_BY_ID)
 				.declareParameters(new SqlParameter(IN_PARAMETER_IN_EMP_ID, Types.BIGINT))
 				.returningResultSet(SP_RESULT_SET, new EmployeeDetailsMapper(employeeManagementMapper));

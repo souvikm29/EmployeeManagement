@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import com.proj.entity.EmployeeDetails;
 import com.proj.repo.EmployeeDetailsRepository;
 
-import lombok.extern.slf4j.Slf4j;
+//import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+//@Slf4j
 @Service
 public class EmployeeDetailsService {
 	private final EmployeeDetailsRepository employeeDetailsRepository;
@@ -19,9 +19,11 @@ public class EmployeeDetailsService {
 	}
 
 	public List<EmployeeDetails> fetchEmployeeDetils(Long empId, String correlationId) {
-		log.info("<START> fetchEmployeeDetils in SERVICE :: CorrelationID :- " + correlationId);
+		// log.info("<START> fetchEmployeeDetils in SERVICE :: CorrelationID :- " +
+		// correlationId);
 		List<EmployeeDetails> employeeDetails = employeeDetailsRepository.findAll(empId, correlationId);
-		log.info("<END> fetchEmployeeDetils in SERVICE :: CorrelationID :- " + correlationId);
+		// log.info("<END> fetchEmployeeDetils in SERVICE :: CorrelationID :- " +
+		// correlationId);
 		return employeeDetails;
 	}
 }
